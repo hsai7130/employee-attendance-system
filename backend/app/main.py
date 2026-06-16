@@ -4,7 +4,8 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from app.api import auth, employees, attendance, leave, payroll, reports
 from app.core.config import settings
-from app.db.session import engine, Base
+from app.db.session import engine
+from app.db.base import Base
 
 Base.metadata.create_all(bind=engine)
 
