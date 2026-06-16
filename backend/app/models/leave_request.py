@@ -22,7 +22,7 @@ class LeaveRequest(Base):
     end_date = Column(Date, nullable=False)
     days = Column(Integer, nullable=False)
     reason = Column(Text, nullable=True)
-    status = Column(String(50), nullable=False, default=LeaveStatus.PENDING.value)
+   status = Column(String(50), nullable=False, default=LeaveStatus.PENDING)
     manager_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     hr_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
