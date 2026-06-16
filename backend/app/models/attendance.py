@@ -1,5 +1,7 @@
-from datetime import date, datetime
-from sqlalchemy import Column, Date, DateTime, Enum, ForeignKey, Integer, String, Text
+from datetime import datetime
+from enum import Enum
+
+from sqlalchemy import Column, Date, DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
 
 from app.db.base import Base
@@ -22,7 +24,13 @@ class Attendance(Base):
     date = Column(Date, nullable=False)
     check_in = Column(DateTime, nullable=True)
     check_out = Column(DateTime, nullable=True)
-    status = Column(String(50), nullable=False, default=AttendanceStatus.PRESENT.value)
+
+    status = Column(
+        String(50),
+        nullable=False,
+        default=AttendanceStatus.PRESENT.value
+    )
+
     remarks = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
