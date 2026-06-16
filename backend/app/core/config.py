@@ -8,7 +8,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Employee Attendance System"
     BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:3000"]
-    SQLALCHEMY_DATABASE_URI: str = "YOUR_RAILWAY_DATABASE_URL"
+    SQLALCHEMY_DATABASE_URI: str
     JWT_SECRET_KEY: str = "change_this_secret"
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
