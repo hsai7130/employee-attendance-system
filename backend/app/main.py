@@ -7,7 +7,9 @@ from app.core.config import settings
 from app.db.session import engine
 from app.db.base import Base
 
-#Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine)
+
+
 
 app = FastAPI(
     title="Employee Attendance and Payroll API",
